@@ -1,0 +1,22 @@
+pipeline {
+		triggers {
+		pollSCM('* * * * *')
+		}
+		
+	stages {
+		stage('Stage 1_Clone') {
+			steps {
+				echo 'clone project'
+				git 'https://github.com/Yogak123/Myhtml_project.git'
+				sh 'pwd'
+				sh 'ls'
+				}
+			}
+		stage('Stage 2-show files') {
+			steps {
+				sh 'pwd'
+				sh 'ls'
+				}
+			}	
+		}
+	}
