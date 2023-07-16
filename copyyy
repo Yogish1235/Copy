@@ -1,4 +1,5 @@
 pipeline {
+	agent {  }
 		triggers {
 		pollSCM('* * * * *')
 		}
@@ -8,8 +9,6 @@ pipeline {
 			steps {
 				echo 'clone project'
 				git 'https://github.com/Yogak123/Myhtml_project.git'
-				sh 'pwd'
-				sh 'ls'
 				}
 			}
 		stage('Stage 2-show files') {
